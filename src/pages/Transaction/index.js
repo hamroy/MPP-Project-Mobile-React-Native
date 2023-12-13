@@ -5,10 +5,7 @@ const Transaction = ({navigation}) => {
   return (
     <View>
       <Text>Transaction</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('WebView')}
-      />
+      <Button title="Kembali" onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };

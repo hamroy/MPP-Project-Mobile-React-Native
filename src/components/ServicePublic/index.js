@@ -9,10 +9,26 @@ const ServicePublic = () => {
       <Text style={styles.label}>Layanan Kami</Text>
       <View>
         <View style={styles.iconLayanan}>
-          <ButtomIcon title={'OSS'} iconName={images.oss} />
-          <ButtomIcon title={'Secantik'} iconName={images.secantik} />
-          <ButtomIcon title={'BAZNAS Natuna'} iconName={images.baznas} />
-          <ButtomIcon title={'Website Natuna'} iconName={images.natuna} />
+          <ButtomIcon
+            title={'OSS'}
+            iconName={images.oss}
+            urlName="https://oss.go.id/"
+          />
+          <ButtomIcon
+            title={'Secantik'}
+            iconName={images.secantik}
+            urlName="https://sicantik.go.id/"
+          />
+          <ButtomIcon
+            title={'BAZNAS Natuna'}
+            iconName={images.baznas}
+            urlName="https://bayarzakat.baznas.natunakab.go.id"
+          />
+          <ButtomIcon
+            title={'Website Natuna'}
+            iconName={images.natuna}
+            urlName="https://natunamart.online/"
+          />
         </View>
       </View>
     </View>

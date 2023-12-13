@@ -12,8 +12,7 @@ import {images, SIZES, FONTS, COLORS} from '../../constants';
 
 import {ServicePublic, TransactionHistory} from '../../components';
 
-const Home = ({navigation}) => {
-  console.log(navigation);
+const Home = () => {
   return (
     <View style={styles.page}>
       <ScrollView showsVerticalScrollIndicator={false}>

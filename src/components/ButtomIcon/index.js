@@ -4,7 +4,7 @@ import {COLORS, SIZES} from '../../constants';
 
 import {useNavigation} from '@react-navigation/native';
 
-const ButtomIcon = ({title, iconName}) => {
+const ButtomIcon = ({title, iconName, urlName}) => {
   const navigation = useNavigation();
   const Icon = () => {
     return <Image source={iconName} style={styles.img} />;
@@ -14,7 +14,7 @@ const ButtomIcon = ({title, iconName}) => {
       style={styles.container}
       onPress={() =>
         navigation.navigate('WebView', {
-          url: 'google.com',
+          urlName: urlName,
         })
       }>
       <View style={styles.button}>
