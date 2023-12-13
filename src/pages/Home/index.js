@@ -1,21 +1,34 @@
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React from 'react';
 
 import {images, SIZES, FONTS, COLORS} from '../../constants';
 
-import {ServicePublic} from '../../components';
+import {ServicePublic, TransactionHistory} from '../../components';
 
-const Home = () => {
+const Home = ({navigation}) => {
+  console.log(navigation);
   return (
     <View style={styles.page}>
-      <ImageBackground source={images.bg1} style={styles.header}>
-        <Image source={images.logo} style={styles.logo} />
-        <View style={styles.hello}>
-          <Text style={styles.selamat}>Selamat Datang</Text>
-          <Text style={styles.username}>ilham asda sadasd</Text>
-        </View>
-      </ImageBackground>
-      <ServicePublic />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <ImageBackground source={images.bg1} style={styles.header}>
+          <Image source={images.logo} style={styles.logo} />
+          <View style={styles.hello}>
+            <Text style={styles.selamat}>Selamat Datang</Text>
+            <Text style={styles.username}>Mall</Text>
+            <Text style={styles.username}>Pelayanan</Text>
+            <Text style={styles.username}>Publik</Text>
+          </View>
+        </ImageBackground>
+        <ServicePublic />
+        <TransactionHistory />
+      </ScrollView>
     </View>
   );
 };
@@ -29,16 +42,17 @@ const styles = StyleSheet.create({
   },
   header: {
     width: SIZES.width,
-    height: SIZES.height * 0.35,
+    height: SIZES.height * 0.4,
     paddingHorizontal: 30,
     paddingVertical: 10,
   },
   logo: {
-    width: SIZES.width * 0.15,
+    width: SIZES.width * 0.3,
     height: SIZES.height * 0.1,
+    resizeMode: 'contain',
   },
   hello: {
-    marginTop: SIZES.height * 0.005,
+    marginTop: SIZES.height * 0.05,
   },
   selamat: FONTS.h2,
   username: FONTS.h1,

@@ -1,19 +1,19 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import {COLORS, SIZES} from '../../constants';
+import {COLORS, SIZES, images} from '../../constants';
 import ButtomIcon from '../ButtomIcon';
 
 const ServicePublic = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Layanan Kami</Text>
-      <View style={styles.iconLayanan}>
-        <ButtomIcon title={'layanan1'} />
-        <ButtomIcon title={'layanan2'} />
-        <ButtomIcon title={'layanan3'} />
-        <ButtomIcon title={'layanan4'} />
-        <ButtomIcon title={'layanan4'} />
-        <ButtomIcon title={'layanan4'} />
+      <View>
+        <View style={styles.iconLayanan}>
+          <ButtomIcon title={'OSS'} iconName={images.oss} />
+          <ButtomIcon title={'Secantik'} iconName={images.secantik} />
+          <ButtomIcon title={'BAZNAS Natuna'} iconName={images.baznas} />
+          <ButtomIcon title={'Website Natuna'} iconName={images.natuna} />
+        </View>
       </View>
     </View>
   );
@@ -24,7 +24,7 @@ export default ServicePublic;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
-    paddingLeft: 40,
+    paddingHorizontal: 20,
     paddingTop: 15,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: SIZES.h3,
     fontWeight: 'bold',
-    fontFamily: 'TitilliumWeb-Reguler',
+    fontFamily: 'Roboto-Reguler',
   },
   iconLayanan: {
     flexDirection: 'row',

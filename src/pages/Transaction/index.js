@@ -1,10 +1,14 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button} from 'react-native';
 import React from 'react';
 
-const Transaction = () => {
+const Transaction = ({navigation}) => {
   return (
     <View>
       <Text>Transaction</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('WebView')}
+      />
     </View>
   );
 };

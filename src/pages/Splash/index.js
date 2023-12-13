@@ -12,7 +12,7 @@ const Splash = ({navigation}) => {
 
   return (
     <View style={styles.background}>
-      <Image source={images.logo} style={styles.logo} />
+      <Image source={images.logo_fs} style={styles.logo} />
     </View>
   );
 };
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    width: 222,
+    // width: ,
+    resizeMode: 'contain',
   },
 });

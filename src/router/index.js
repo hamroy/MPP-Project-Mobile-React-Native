@@ -3,7 +3,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {Home, Splash, Akun, Transaction} from '../pages';
+import {Home, Splash, Akun, Transaction, WebView} from '../pages';
 import {BottomNav} from '../components';
 
 const Stack = createNativeStackNavigator();
@@ -30,6 +30,11 @@ const Router = () => {
       <Stack.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="WebView"
+        component={WebView}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

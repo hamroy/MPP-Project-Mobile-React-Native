@@ -1,19 +1,22 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity, Image, Text} from 'react-native';
-import {COLORS, SIZES, icons} from '../../constants';
+import {COLORS, SIZES} from '../../constants';
 
-const ButtomIcon = ({title}) => {
+import {useNavigation} from '@react-navigation/native';
+
+const ButtomIcon = ({title, iconName}) => {
+  const navigation = useNavigation();
   const Icon = () => {
-    // if (title === 'layanan1') {
-    //   return <Image source={icons.bill} />;
-    // }
-    // if (title === 'layanan2') {
-    //   return <Image source={icons.phone} />;
-    // }
-    return <Image source={icons.more} style={styles.img} />;
+    return <Image source={iconName} style={styles.img} />;
   };
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() =>
+        navigation.navigate('WebView', {
+          url: 'google.com',
+        })
+      }>
       <View style={styles.button}>
         <Icon />
       </View>
@@ -25,17 +28,32 @@ const ButtomIcon = ({title}) => {
 export default ButtomIcon;
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: COLORS.green,
     padding: 20,
-    borderRadius: 10,
+
+    // alignContent: 'center',
+    // alignItems: 'center',
+    // textAlign: 'center',
   },
   container: {
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: COLORS.secondary,
+    // backgroundColor: COLORS.brown,
+    width: SIZES.width * 0.4,
+    height: SIZES.height * 0.3,
+    textAlign: 'center',
     marginBottom: 20,
-    marginRight: 40,
+    justifyContent: 'center',
+    // marginRight: 20,
   },
   text: {
-    fontSize: SIZES.font,
-    fontFamily: 'TitilliumWeb-Reguler',
+    fontSize: SIZES.h4,
+    fontFamily: 'Roboto-Reguler',
     textAlign: 'center',
+  },
+  img: {
+    width: SIZES.width * 0.3,
+    height: SIZES.height * 0.2,
+    resizeMode: 'contain',
   },
 });

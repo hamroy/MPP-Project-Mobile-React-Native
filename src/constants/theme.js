@@ -3,14 +3,17 @@ const {width, height} = Dimensions.get('window');
 
 export const COLORS = {
   // base colors
-  primary: '#24C16B', // green
-  secondary: '#0C381F', // dark green
+  primary: '#093499', // dark blue
+  secondary: '#1A52D4', // blue
 
   green: '#66D59A',
   lightGreen: '#E6FEF0',
 
   lime: '#00BA63',
   emerald: '#2BC978',
+
+  brown: '#C25004',
+  lightBrown: '#FF6600',
 
   red: '#FF4134',
   lightRed: '#FFF1F0',
@@ -63,7 +66,7 @@ export const FONTS = {
   },
   h1: {
     fontWeight: '700',
-    fontFamily: 'sans-serif',
+    fontFamily: 'Roboto-Bold',
     fontSize: SIZES.h1,
     lineHeight: 36,
   },
@@ -78,32 +81,32 @@ export const FONTS = {
     lineHeight: 22,
   },
   h4: {
-    //fontFamily: 'Roboto-Bold',
+    fontFamily: 'Roboto-Bold',
     fontSize: SIZES.h4,
     lineHeight: 22,
   },
   body1: {
-    //fontFamily: 'Roboto-Regular',
+    fontFamily: 'Roboto-Regular',
     fontSize: SIZES.body1,
     lineHeight: 36,
   },
   body2: {
-    //fontFamily: 'Roboto-Regular',
+    fontFamily: 'Roboto-Regular',
     fontSize: SIZES.body2,
     lineHeight: 30,
   },
   body3: {
-    //fontFamily: 'Roboto-Regular',
+    fontFamily: 'Roboto-Regular',
     fontSize: SIZES.body3,
     lineHeight: 22,
   },
   body4: {
-    //fontFamily: 'Roboto-Regular',
+    fontFamily: 'Roboto-Regular',
     fontSize: SIZES.body4,
     lineHeight: 22,
   },
   body5: {
-    //fontFamily: 'Roboto-Regular',
+    fontFamily: 'Roboto-Regular',
     fontSize: SIZES.body5,
     lineHeight: 22,
   },
