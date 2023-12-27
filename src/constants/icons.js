@@ -7,7 +7,7 @@ const bill = require('../../assets/icons/bill.png');
 // const eye = require("../assets/icons/eye.png")
 // const game = require("../assets/icons/games.png");
 // const barcode = require("../assets/icons/barcode.png");
-// const info = require("../assets/icons/info.png");
+const info = require('../../assets/icons/info.png');
 // const internet = require("../assets/icons/internet.png");
 const more = require('../../assets/icons/more.png');
 const phone = require('../../assets/icons/phone.png');
@@ -27,7 +27,7 @@ export default {
   //     eye,
   //     game,
   //     barcode,
-  //     info,
+  info,
   //     internet,
   more,
   phone,

@@ -8,8 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 
-import {images, SIZES, FONTS, COLORS} from '../../constants';
-
+import {images, SIZES, FONTS, COLORS, icons} from '../../constants';
 import {ServicePublic, TransactionHistory} from '../../components';
 
 const Home = () => {

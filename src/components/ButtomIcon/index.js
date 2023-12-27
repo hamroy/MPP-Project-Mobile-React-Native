@@ -7,7 +7,7 @@ import {useNavigation} from '@react-navigation/native';
 const ButtomIcon = ({title, iconName, urlName}) => {
   const navigation = useNavigation();
   const Icon = () => {
-    return <Image source={iconName} style={styles.img} />;
+    return <Image source={{uri: iconName}} style={styles.img} />;
   };
   return (
     <TouchableOpacity
@@ -28,8 +28,6 @@ const ButtomIcon = ({title, iconName, urlName}) => {
 export default ButtomIcon;
 const styles = StyleSheet.create({
   button: {
-    padding: 20,
-
     // alignContent: 'center',
     // alignItems: 'center',
     // textAlign: 'center',
@@ -39,21 +37,23 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: COLORS.secondary,
     // backgroundColor: COLORS.brown,
-    width: SIZES.width * 0.4,
-    height: SIZES.height * 0.3,
+    width: SIZES.width * 0.2,
+    height: SIZES.height * 0.2,
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 30,
     justifyContent: 'center',
     // marginRight: 20,
   },
   text: {
+    paddingTop: 10,
     fontSize: SIZES.h4,
     fontFamily: 'Roboto-Reguler',
     textAlign: 'center',
   },
   img: {
-    width: SIZES.width * 0.3,
-    height: SIZES.height * 0.2,
+    width: SIZES.width * 0.2,
+    height: SIZES.height * 0.1,
+    // backgroundColor: COLORS.black,
     resizeMode: 'contain',
   },
 });
