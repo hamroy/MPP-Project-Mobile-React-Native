@@ -8,7 +8,7 @@ const ServicePublic = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  const getMovies = async () => {
+  const getServices = async () => {
     try {
       const response = await fetch('https://mpp.natunakab.go.id/menu-json');
       const json = await response.json();
@@ -21,8 +21,16 @@ const ServicePublic = () => {
   };
 
   useEffect(() => {
-    getMovies();
+    getServices();
   }, []);
+
+  const Item = ({item}) => (
+    <ButtomIcon
+      title={item.keterangan}
+      iconName={item.gambar}
+      urlName={item.url}
+    />
+  );
 
   return (
     <View style={styles.container}>
@@ -43,14 +51,8 @@ const ServicePublic = () => {
           {isLoading ? (
             <ActivityIndicator />
           ) : (
-            data.map(service => {
-              return (
-                <ButtomIcon
-                  title={service.keterangan}
-                  iconName={service.gambar}
-                  urlName={service.url}
-                />
-              );
+            data.map((service, key) => {
+              return <Item key={key} item={service} />;
             })
           )}
         </View>

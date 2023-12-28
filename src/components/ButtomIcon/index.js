@@ -28,9 +28,9 @@ const ButtomIcon = ({title, iconName, urlName}) => {
 export default ButtomIcon;
 const styles = StyleSheet.create({
   button: {
-    // alignContent: 'center',
-    // alignItems: 'center',
-    // textAlign: 'center',
+    padding: 5,
+    // backgroundColor: COLORS.brown,
+    alignItems: 'center',
   },
   container: {
     borderWidth: 1,
@@ -45,13 +45,13 @@ const styles = StyleSheet.create({
     // marginRight: 20,
   },
   text: {
-    paddingTop: 10,
+    padding: SIZES.width * 0.005,
     fontSize: SIZES.h4,
     fontFamily: 'Roboto-Reguler',
     textAlign: 'center',
   },
   img: {
-    width: SIZES.width * 0.2,
+    width: SIZES.width * 0.15,
     height: SIZES.height * 0.1,
     // backgroundColor: COLORS.black,
     resizeMode: 'contain',

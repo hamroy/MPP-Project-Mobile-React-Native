@@ -5,6 +5,8 @@ import {
   StyleSheet,
   Text,
   View,
+  SafeAreaView,
+  StatusBar,
 } from 'react-native';
 import React from 'react';
 
@@ -13,7 +15,8 @@ import {ServicePublic, TransactionHistory} from '../../components';
 
 const Home = () => {
   return (
-    <View style={styles.page}>
+    <SafeAreaView style={styles.page}>
+      <StatusBar animated={false} backgroundColor={COLORS.primary} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <ImageBackground source={images.bg1} style={styles.header}>
           <Image source={images.logo} style={styles.logo} />
@@ -27,7 +30,7 @@ const Home = () => {
         <ServicePublic />
         <TransactionHistory />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

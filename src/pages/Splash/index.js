@@ -1,4 +1,4 @@
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image, StatusBar} from 'react-native';
 import React, {useEffect} from 'react';
 
 import {images} from '../../constants';
@@ -12,6 +12,7 @@ const Splash = ({navigation}) => {
 
   return (
     <View style={styles.background}>
+      <StatusBar hidden={true} />
       <Image source={images.logo_fs} style={styles.logo} />
     </View>
   );
