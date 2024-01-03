@@ -12,7 +12,7 @@ const Splash = ({navigation}) => {
 
   return (
     <View style={styles.background}>
-      <StatusBar hidden={true} />
+      <StatusBar animated={false} hidden={true} backgroundColor="#fff" />
       <Image source={images.logo_fs} style={styles.logo} />
     </View>
   );

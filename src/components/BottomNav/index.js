@@ -54,7 +54,7 @@ export default BottomNav;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: COLORS.gray,
+    backgroundColor: COLORS.white,
     justifyContent: 'space-between',
     paddingHorizontal: 10,
     paddingVertical: 10,

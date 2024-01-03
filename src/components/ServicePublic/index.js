@@ -7,21 +7,37 @@ import MarqueeText from 'react-native-marquee';
 const ServicePublic = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [runText, setrunText] = useState([]);
 
   const getServices = async () => {
     try {
-      const response = await fetch('https://mpp.natunakab.go.id/menu-json');
+      const response = await fetch(
+        'https://mpp.natunakab.go.id/admin/menu-json',
+      );
       const json = await response.json();
       setData(json);
+      setLoading(false);
     } catch (error) {
       console.error(error);
-    } finally {
-      setLoading(false);
+    }
+  };
+
+  const getText = async () => {
+    try {
+      const response = await fetch(
+        'https://mpp.natunakab.go.id/admin/teks-json',
+      );
+      const json = await response.json();
+      setrunText(json);
+      // console.log(runText[0].teks);
+    } catch (error) {
+      console.error(error);
     }
   };
 
   useEffect(() => {
     getServices();
+    getText();
   }, []);
 
   const Item = ({item}) => (
@@ -42,14 +58,14 @@ const ServicePublic = () => {
           loop={true}
           marqueeOnStart={true}
           delay={1000}>
-          Lorem Ipsum is simply dummy text of the printing
+          {runText.length > 0 ? runText[0].teks : ''}
         </MarqueeText>
       </View>
       <Text style={styles.label}>Layanan Kami</Text>
       <View>
         <View style={styles.iconLayanan}>
           {isLoading ? (
-            <ActivityIndicator />
+            <ActivityIndicator style={styles.indicator} />
           ) : (
             data.map((service, key) => {
               return <Item key={key} item={service} />;
@@ -103,5 +119,8 @@ const styles = StyleSheet.create({
   marquee: {
     fontSize: SIZES.h4,
     color: COLORS.lightBrown,
+  },
+  indicator: {
+    padding: 20,
   },
 });

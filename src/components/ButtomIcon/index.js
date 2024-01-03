@@ -1,5 +1,13 @@
-import React from 'react';
-import {View, StyleSheet, TouchableOpacity, Image, Text} from 'react-native';
+import React, {useCallback} from 'react';
+import {
+  View,
+  StyleSheet,
+  Linking,
+  TouchableOpacity,
+  Image,
+  Text,
+  Alert,
+} from 'react-native';
 import {COLORS, SIZES} from '../../constants';
 
 import {useNavigation} from '@react-navigation/native';
@@ -9,14 +17,32 @@ const ButtomIcon = ({title, iconName, urlName}) => {
   const Icon = () => {
     return <Image source={{uri: iconName}} style={styles.img} />;
   };
+
+  const handlePress = useCallback(async () => {
+    // Checking if the link is supported for links with custom URL scheme.
+    const supportedURL = `whatsapp://send?phone=${urlName}`;
+    const supported = await Linking.canOpenURL(supportedURL);
+
+    if (supported) {
+      // Open WhatsApp with the specified phone number
+      await Linking.openURL(supportedURL);
+    } else {
+      Alert.alert('Anda belum Install Aplikasi whatsapp');
+    }
+  }, [urlName]);
+
+  const toLink = () => {
+    if (title === 'Dinas PU') {
+      handlePress();
+    } else {
+      navigation.navigate('WebView', {
+        urlName: urlName,
+      });
+    }
+  };
+
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() =>
-        navigation.navigate('WebView', {
-          urlName: urlName,
-        })
-      }>
+    <TouchableOpacity style={styles.container} onPress={toLink}>
       <View style={styles.button}>
         <Icon />
       </View>
