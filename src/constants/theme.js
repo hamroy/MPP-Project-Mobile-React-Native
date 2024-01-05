@@ -1,5 +1,8 @@
-import {Dimensions} from 'react-native';
+import {Dimensions, PixelRatio} from 'react-native';
 const {width, height} = Dimensions.get('window');
+
+const fontScale = PixelRatio.getFontScale();
+const getFontSize = size => size / fontScale;
 
 export const COLORS = {
   // base colors
@@ -36,23 +39,23 @@ export const COLORS = {
 
 export const SIZES = {
   // global sizes
-  base: 8,
-  font: 14,
+  base: getFontSize(8),
+  font: getFontSize(14),
   radius: 30,
   padding: 10,
   padding2: 12,
 
   // font sizes
-  largeTitle: 50,
-  h1: 30,
-  h2: 22,
-  h3: 20,
-  h4: 18,
-  body1: 30,
-  body2: 20,
-  body3: 16,
-  body4: 14,
-  body5: 12,
+  largeTitle: getFontSize(50),
+  h1: getFontSize(30),
+  h2: getFontSize(22),
+  h3: getFontSize(20),
+  h4: getFontSize(18),
+  body1: getFontSize(30),
+  body2: getFontSize(20),
+  body3: getFontSize(16),
+  body4: getFontSize(14),
+  body5: getFontSize(12),
 
   // app dimensions
   width,
@@ -62,23 +65,23 @@ export const SIZES = {
 export const FONTS = {
   largeTitle: {
     fontSize: SIZES.largeTitle,
-    lineHeight: 55,
+    lineHeight: getFontSize(55),
   },
   h1: {
     fontWeight: '700',
     fontFamily: 'Roboto-Bold',
     fontSize: SIZES.h1,
-    lineHeight: 36,
+    lineHeight: getFontSize(36),
   },
   h2: {
     fontFamily: 'Roboto-Bold',
     fontSize: SIZES.h2,
-    lineHeight: 30,
+    lineHeight: getFontSize(30),
   },
   h3: {
     fontFamily: 'Roboto-Bold',
     fontSize: SIZES.h3,
-    lineHeight: 22,
+    lineHeight: getFontSize(22),
   },
   h4: {
     fontFamily: 'Roboto-Bold',

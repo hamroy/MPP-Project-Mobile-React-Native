@@ -1,11 +1,19 @@
-import {StyleSheet, Image, View} from 'react-native';
+import {StyleSheet, Button, Image, View} from 'react-native';
 import {images} from '../../constants';
 import React from 'react';
 
-const Akun = () => {
+const Akun = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image source={images.logo} style={styles.logo} />
+      <Button
+        title="Daftar"
+        onPress={() =>
+          navigation.navigate('WebView', {
+            urlName: 'https://mpp.natunakab.go.id/admin/',
+          })
+        }
+      />
     </View>
   );
 };

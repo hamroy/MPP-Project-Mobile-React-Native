@@ -33,6 +33,11 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
+        name="Register"
+        component={MainApp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="WebView"
         component={WebView}
         options={{headerShown: false}}

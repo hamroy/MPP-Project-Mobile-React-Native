@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
   text: {
     padding: SIZES.width * 0.005,
-    fontSize: SIZES.h4,
+    fontSize: SIZES.h5,
     fontFamily: 'Roboto-Reguler',
     textAlign: 'center',
   },
